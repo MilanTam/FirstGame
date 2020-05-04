@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.Random;
 
 public class MovingObjectsGame extends BasicGame {
-    private List<Rectangle> rectangles;
-    private List<Oval> ovals;
-    private List<Circle> circles;
-    private Rectangle rectangle;
-    private Oval oval;
-    private Circle round;
+    private List<Actor> actors;
+    // private List<Oval> ovals;
+    // private List<Circle> circles;
+    //private Rectangle rectangle;
+    //private Oval oval;
+    //private Circle round;
 
     public MovingObjectsGame(String title) {
         super(title);
@@ -23,54 +23,55 @@ public class MovingObjectsGame extends BasicGame {
     public void init(GameContainer gameContainer) throws SlickException {
 
         Random random = new Random();
-        this.rectangles = new ArrayList<>();
-        this.ovals = new ArrayList<>();
-        this.circles = new ArrayList<>();
+        this.actors = new ArrayList<>();
+        //this.ovals = new ArrayList<>();
+        //this.circles = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
             Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
-            rectangles.add(rectangle);
+            actors.add(rectangle);
         }
         for (int i = 0; i < 100; i++) {
             Oval oval = new Oval(random.nextInt(600), random.nextInt(600), random.nextInt(50));
-            ovals.add(oval);
+            actors.add(oval);
         }
-        for (int i = 0; i < 100; i++) {
-            Circle circle = new Circle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
-            circles.add(circle);
-        }
+
+        for(int i = 0;i < 100; i++){
+        Circle circle = new Circle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
+        actors.add(circle);
+    }
+    }
         /*this.rectangle = new Rectangle(100, 100, 5);
         this.oval = new Oval(0, 100, 5);
         this.round = new Circle(0, 0, 5);*/
 
-    }
 
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
-        for (Rectangle rectangle : this.rectangles) {
-            rectangle.update(delta);
+        for (Actor actor : this.actors) {
+            actor.update(delta);
         }
-        for (Oval oval : this.ovals){
+        /*for (Oval oval : this.ovals) {
             oval.update(delta);
         }
-        for (Circle circle:this.circles){
+        for (Circle circle : this.circles) {
             circle.update(delta);
         }
-        /*this.rectangle.update(delta);
+        this.rectangle.update(delta);
         this.oval.update(delta);
         this.round.update(delta);*/
     }
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-        for (Rectangle rectangle : this.rectangles) {
-            rectangle.render(graphics);
+        for (Actor actor : this.actors) {
+            actor.render(graphics);
 
         }
-        for (Oval oval:this.ovals){
+       /* for (Oval oval : this.ovals) {
             oval.render(graphics);
         }
-        for (Circle circle:this.circles){
+        for (Circle circle : this.circles) {
             circle.render(graphics);
         }
         /*this.rectangle.render(graphics);

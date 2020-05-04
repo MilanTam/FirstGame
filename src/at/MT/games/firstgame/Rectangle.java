@@ -2,9 +2,8 @@ package at.MT.games.firstgame;
 
 import org.newdawn.slick.Graphics;
 
-import javax.imageio.plugins.tiff.TIFFImageReadParam;
 
-public class Rectangle {
+public class Rectangle implements Actor{
     //public enum MovingDirection {RIGHT, DOWN, LEFT, UP}
 
     private float x;

@@ -2,7 +2,7 @@ package at.MT.games.firstgame;
 
 import org.newdawn.slick.Graphics;
 
-public class Circle {
+public class Circle implements Actor{
     private enum MovingDirection {RIGHT, DOWN, LEFT, UP}
 
     private float x;
