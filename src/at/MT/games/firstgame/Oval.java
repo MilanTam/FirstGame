@@ -27,12 +27,12 @@ public class Oval implements Actor{
     public void update(int delta) {
         if (objectDirection == MovingDirection.DOWN) {
             this.y += (float) delta / this.speed;
-            if (this.y > 500) {
+            if (this.y > 800) {
                 this.objectDirection = MovingDirection.UP;
             }
         } else {
             this.y -= (float) delta / this.speed;
-            if (this.y < 100) {
+            if (this.y < 50) {
                 this.objectDirection = MovingDirection.DOWN;
             }
         }

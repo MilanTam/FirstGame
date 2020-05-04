@@ -28,7 +28,7 @@ public class Rectangle implements Actor{
 
     public void update(int delta) {
         this.x += (float) delta / this.speed;
-        if (this.x > 600) {
+        if (this.x > 1100) {
             this.x = 0;
         }
 

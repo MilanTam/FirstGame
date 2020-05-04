@@ -28,16 +28,16 @@ public class MovingObjectsGame extends BasicGame {
         //this.circles = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
-            Rectangle rectangle = new Rectangle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
+            Rectangle rectangle = new Rectangle(random.nextInt(1200), random.nextInt(800), random.nextInt(50));
             actors.add(rectangle);
         }
-        for (int i = 0; i < 100; i++) {
-            Oval oval = new Oval(random.nextInt(600), random.nextInt(600), random.nextInt(50));
+        for (int i = 0; i < 50; i++) {
+            Oval oval = new Oval(random.nextInt(1200), random.nextInt(800), random.nextInt(50));
             actors.add(oval);
         }
 
-        for(int i = 0;i < 100; i++){
-        Circle circle = new Circle(random.nextInt(600), random.nextInt(600), random.nextInt(50));
+        for(int i = 0;i < 50; i++){
+        Circle circle = new Circle(random.nextInt(1200), random.nextInt(800), random.nextInt(50));
         actors.add(circle);
     }
     }
@@ -82,8 +82,8 @@ public class MovingObjectsGame extends BasicGame {
 
     public static void main(String[] argv) {
         try {
-            AppGameContainer container = new AppGameContainer(new MovingObjectsGame("RECTANGLES"));
-            container.setDisplayMode(800, 600, false);
+            AppGameContainer container = new AppGameContainer(new MovingObjectsGame("MovingObjectsGame"));
+            container.setDisplayMode(1200, 800, false);
             container.start();
         } catch (SlickException e) {
             e.printStackTrace();

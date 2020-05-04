@@ -27,7 +27,7 @@ public class Circle implements Actor{
     public void update(int delta) {
         if (objectDirection == MovingDirection.RIGHT) {
             this.x += (float) delta / this.speed;
-            if (this.x > 700) {
+            if (this.x > 1000) {
                 this.objectDirection = MovingDirection.LEFT;
             }
         } else {
